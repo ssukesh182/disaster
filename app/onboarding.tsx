@@ -46,7 +46,6 @@ const onboardingSteps = [
   {
     id: 4,
     title: 'Bluetooth Mesh Network',
-    description: 'Enable Bluetooth to communicate with other SafeHaven users nearby when internet is unavailable.',
     description: 'Enable Bluetooth to communicate with other Rakshak users nearby when internet is unavailable.',
     icon: Bluetooth,
     color: '#6366F1',
