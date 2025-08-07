@@ -1,0 +1,456 @@
+/* 
+ * Rakshak Mobile-First CSS Framework
+ * Mobile-optimized disaster management app
+ * Base: 320px minimum width, scaling up
+ */
+
+/* CSS Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; /* Base font size for rem calculations */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  color: #111827;
+  background-color: #F9FAFB;
+  overflow-x: hidden;
+}
+
+/* Mobile-First Typography Scale */
+.text-xs { font-size: 0.75rem; line-height: 1rem; } /* 12px */
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; } /* 14px */
+.text-base { font-size: 1rem; line-height: 1.5rem; } /* 16px */
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; } /* 18px */
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; } /* 20px */
+.text-2xl { font-size: 1.5rem; line-height: 2rem; } /* 24px */
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; } /* 30px */
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; } /* 36px */
+
+/* Mobile-First Spacing System (8px grid) */
+.p-1 { padding: 0.5rem; } /* 8px */
+.p-2 { padding: 1rem; } /* 16px */
+.p-3 { padding: 1.5rem; } /* 24px */
+.p-4 { padding: 2rem; } /* 32px */
+.p-5 { padding: 2.5rem; } /* 40px */
+
+.m-1 { margin: 0.5rem; }
+.m-2 { margin: 1rem; }
+.m-3 { margin: 1.5rem; }
+.m-4 { margin: 2rem; }
+
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+.gap-3 { gap: 1.5rem; }
+.gap-4 { gap: 2rem; }
+
+/* Mobile-First Layout System */
+.container {
+  width: 100%;
+  max-width: 100vw;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+/* Mobile-First Grid System */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Mobile-Optimized Components */
+
+/* Touch-Friendly Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem; /* 44px minimum touch target */
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 0.5rem;
+  line-height: 1.2;
+}
+
+.btn-primary {
+  background-color: #DC2626;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.2);
+}
+
+.btn-primary:active {
+  background-color: #B91C1C;
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #DC2626;
+  border: 2px solid #DC2626;
+}
+
+.btn-large {
+  min-height: 3.5rem; /* 56px */
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Mobile-Optimized Cards */
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.card-header {
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+/* Emergency-Specific Components */
+.alert-card {
+  border-left: 4px solid #DC2626;
+  background: #FEF2F2;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.alert-high {
+  border-left-color: #DC2626;
+  background: #FEF2F2;
+}
+
+.alert-medium {
+  border-left-color: #F59E0B;
+  background: #FEF3C7;
+}
+
+.alert-low {
+  border-left-color: #059669;
+  background: #ECFDF5;
+}
+
+/* SOS Button - Emergency Optimized */
+.sos-button {
+  width: 8.75rem; /* 140px */
+  height: 8.75rem;
+  border-radius: 50%;
+  background: #DC2626;
+  color: white;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sos-button:active {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.4);
+}
+
+/* Status Indicators */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-online {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.status-offline {
+  background: #FEF3C7;
+  color: #F59E0B;
+}
+
+/* Navigation - Mobile Optimized */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid #E5E7EB;
+  padding: 0.75rem 0 2.25rem 0; /* Account for safe area */
+  display: flex;
+  justify-content: space-around;
+  z-index: 50;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  min-width: 2.75rem; /* 44px touch target */
+  text-decoration: none;
+  color: #6B7280;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tab-item.active {
+  color: #DC2626;
+}
+
+/* Header - Mobile Optimized */
+.header {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #E5E7EB;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.header-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Form Elements - Touch Optimized */
+.input {
+  width: 100%;
+  min-height: 2.75rem; /* 44px */
+  padding: 0.75rem 1rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: white;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #DC2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+/* Responsive Breakpoints - Mobile First */
+
+/* Small phones: 320px and up (base styles above) */
+
+/* Large phones: 480px and up */
+@media (min-width: 30rem) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .grid-cols-sm-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .text-sm-lg { font-size: 1.125rem; }
+  .text-sm-xl { font-size: 1.25rem; }
+  .text-sm-2xl { font-size: 1.5rem; }
+}
+
+/* Tablets: 768px and up */
+@media (min-width: 48rem) {
+  .container {
+    max-width: 48rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .grid-cols-md-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-cols-md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .flex-md-row {
+    flex-direction: row;
+  }
+  
+  .text-md-xl { font-size: 1.25rem; }
+  .text-md-2xl { font-size: 1.5rem; }
+  .text-md-3xl { font-size: 1.875rem; }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 64rem) {
+  .container {
+    max-width: 64rem;
+  }
+  
+  .grid-cols-lg-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid-cols-lg-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large Desktop: 1280px and up */
+@media (min-width: 80rem) {
+  .container {
+    max-width: 80rem;
+  }
+}
+
+/* Accessibility and Emergency Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .btn-primary {
+    border: 2px solid #000;
+  }
+  
+  .card {
+    border: 1px solid #000;
+  }
+}
+
+/* Dark mode support for emergency visibility */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111827;
+    color: #F9FAFB;
+  }
+  
+  .card {
+    background: #1F2937;
+    color: #F9FAFB;
+  }
+  
+  .header {
+    background: #1F2937;
+    border-bottom-color: #374151;
+  }
+  
+  .tab-bar {
+    background: #1F2937;
+    border-top-color: #374151;
+  }
+}
+
+/* Safe area handling for modern mobile devices */
+@supports (padding: max(0px)) {
+  .tab-bar {
+    padding-bottom: max(2.25rem, env(safe-area-inset-bottom));
+  }
+  
+  .header {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+}
+
+/* Touch-specific optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover {
+    transform: none;
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .sos-button {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .header {
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .header-title {
+    font-size: 1.5rem;
+  }
+}
